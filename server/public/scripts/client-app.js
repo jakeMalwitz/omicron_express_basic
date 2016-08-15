@@ -26,6 +26,7 @@ $(document).ready(function () {
       },
 
       error: function (response) {
+        alert("NO DUPLICATES OR BLANK FIELDS!");
         console.log('Attempted POST /songs, did not work');
       }
     });
@@ -38,7 +39,7 @@ function getSongs() {
     success: function (songs) {
       $('#song-list').empty();
       songs.forEach(function (song) {
-        $('#song-list').append('<div>' + song.title + '-' + song.artist + '</div>');
+        $('#song-list').append('<div>' + song.title + '-' + song.artist + ' ' + song.date + '</div>');
       });
     },
 
